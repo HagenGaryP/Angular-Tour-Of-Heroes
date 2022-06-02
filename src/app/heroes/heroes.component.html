@@ -8,8 +8,18 @@
   <input id="name" [(ngModel)]="hero.name" placeholder="name">
 </div> -->
 
-<!-- LEARNING HOW TO DISPLAY A LIST USING '*ngFor' -->
+<!-- using routerLink instead of buttons with click listener' -->
 <h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
+
+<!-- LEARNING HOW TO DISPLAY A LIST USING '*ngFor' -->
+<!-- <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <button
@@ -21,7 +31,7 @@
       <span class="name">{{hero.name}}</span>
     </button>
   </li>
-</ul>
+</ul> -->
 
 <!-- Hero details section for the selected hero -->
 <!-- <div *ngIf="selectedHero">
@@ -33,4 +43,4 @@
   </div>
 </div> -->
 
-<app-hero-details [hero]="selectedHero"></app-hero-details>
+<!-- <app-hero-details [hero]="selectedHero"></app-hero-details> -->
